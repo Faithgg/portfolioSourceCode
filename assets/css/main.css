@@ -245,7 +245,7 @@ input, select, textarea {
 		-webkit-transform: translate3d(0,0,0);
 		-ms-transform: translate3d(0,0,0);
 		transform: translate3d(0,0,0);
-		background: #01010A url("images/jjkk.gif") bottom left;
+		background: #01010A url("images/bg.gif") bottom left;
 		background-repeat: repeat-x;
 		height: 100%;
 		left: 0;
@@ -593,7 +593,22 @@ input, select, textarea {
 			opacity: 0.75;
 		}
 
-		#header button {
+		#header button.buttoncv {
+			padding: 0.6em 2em;
+			border: none;
+			outline: none;
+			color: rgb(0, 255, 0);
+			background: black;
+			cursor: pointer;
+			position: relative;
+			z-index: 0;
+			border-radius: 10px;
+			user-select: none;
+			-webkit-user-select: none;
+			touch-action: manipulation;
+		}
+
+		#header button.button {
 			padding: 0.6em 2em;
 			border: none;
 			outline: none;
@@ -628,6 +643,37 @@ input, select, textarea {
 			border-radius: 3vw;
 			bottom: 10vh;
 			color: white;
+		}
+
+		#header button.buttoncv:before{
+			content: "";
+			background: linear-gradient(
+				45deg,
+				#fffb00,
+				#ff7300,
+				#00123A,
+				#dA12f3,
+				#ef12ae,
+				#7a00ff,
+				#ff00c8,
+				#ff0000,
+				#00ffd5,
+				#ff0000,
+				#48ff00,
+				#002bff
+			);
+			position: absolute;
+			top: -2px;
+			left: -2px;
+			background-size: 400%;
+			z-index: -1;
+			filter: blur(5px);
+			-webkit-filter: blur(5px);
+			width: calc(100% + 4px);
+			height: calc(100% + 4px);
+			animation: glowing-button-85 20s linear infinite;
+			transition: opacity 0.3s ease-in-out;
+			border-radius: 10px;
 		}
 
 		#header button.button:before{
@@ -674,7 +720,18 @@ input, select, textarea {
 	background-color: green;
 }
 
-#header button:after {
+#header button.button:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: black;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+#header button.buttoncv:after {
   z-index: -1;
   content: "";
   position: absolute;
